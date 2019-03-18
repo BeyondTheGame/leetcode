@@ -17,13 +17,13 @@ class Solution:
             if not tree:
                 return 0
 
-            stack = [(tree, 1)]
-            while (len(stack)):
-                node, deep = stack.pop(0)
+            queue = [(tree, 1)]
+            while (len(queue)):
+                node, deep = queue.pop(0)
                 if node.left:
-                    stack.append((node.left, deep + 1))
+                    queue.append((node.left, deep + 1))
                 if node.right:
-                    stack.append((node.right, deep + 1))
+                    queue.append((node.right, deep + 1))
             return deep
         if root == None:
             return True
