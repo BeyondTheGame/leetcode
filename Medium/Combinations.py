@@ -19,12 +19,12 @@ class Solution(object):
             self.helper(n, k, i + 1, out)
             out.pop()
 
-    def combine(self, n, k):
+    def combine2(self, n, k):
         if k == 0:
             return [[]]
         return [x + [tail] for tail in range(n, k - 1, -1) for x in self.combine(tail - 1, k - 1)]
 
-    def combine(self, n, k):
+    def combine2(self, n, k):
         res = []
 
 
